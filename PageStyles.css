@@ -1,0 +1,28 @@
+h1{
+    font-size:250%;
+    font-family:verdana;
+    margin:auto;
+    text-align:center;
+}
+
+li{
+    text-decoration:underline;
+}
+
+label{
+    font-weight:bold;
+}
+
+#coverPhoto{
+    border: 2px solid black;
+    margin:auto;
+}
+
+.night{
+    background:black;
+    color:white;
+}
+
+table, th, td {
+    border:1px solid black;
+}
