@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 1</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="\CSS\DefaultStyles.css" />
+</head>
+<body>
+    <header></header>
+    <nav>
+        <h2 style="text-align:center;width:100%;text-decoration:underline;">Links</h2>
+        <ul>
+            <li><a href="http://weblogs.asp.net/scottgu/default.aspx">ScottGu's Blog</a></li>
+            <li><a href="http://odetocode.com/blogs/all">Ode To Code</a></li>
+            <li><a href="http://weblogs.asp.net/bsimser/">Fear and Loathing</a></li>
+            <li><a href="http://lmgtfy.com/?q=asp.net+blogs">LMGTFY</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1 style="text-align:center;width:100%;text-decoration:underline;">Profile</h1>
+        <div class="container">
+            <form action="http://www.oit.edu/cst465" method="post">
+                <label for="uxName">Name:</label>
+                <input type="text" id="uxName" name="Name" class="input"/>
+                <br />
+
+                <label for="uxEmailAddress">Email:</label>
+                <input type="text" id="uxEmailAddress" name="Email" />
+                <br />
+
+                <label for="uxUserType" >User Type:</label>
+                <select id="uxUserType" name="UserType" style="margin-right:6px;">
+                    <option value="student">Student</option>
+                    <option value="fac_staff">Faculty/Staff</option>
+                </select>
+                <br />
+
+                <label for="uxHobby">Hobby:</label>
+                <input type="text" id="uxHobby" name="Hobby" />
+                <br />
+
+                <label for="uxBand">Favorite Band:</label>
+                <input type="text" id="uxBand" name="uxBand" />
+                <br />
+
+                <label for="uxBiography">Bio:</label>
+                <textarea id="uxBiography" name="uxBand" rows="5" cols="45"></textarea>
+                <br />
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Course Prefix</td>
+                            <td>Course Number</td>
+                            <td>Course Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" id="uxCoursePrefix" name="CoursePrefix" style="width:90%;"/></td>
+                            <td><input type="text" id="uxCourseNumber" name="CourseNumber" style="width:90%;"/></td>
+                            <td><input type="text" id="uxCourseDescription" name="CourseDescription" style="width:90%;"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+
+                <input type="hidden" id="uxNickname" name="Nickname" value="GobbleyDGook" />
+
+                <input type="submit" id="uxSubmit" value="Save Profile"/>
+            </form>
+        </div>
+    </main>
+    <section>
+        <h1>This is a section!</h1>
+    </section>
+    <footer>
+        <h1>This is a footer!</h1>
+    </footer>
+</body>
+</html>
