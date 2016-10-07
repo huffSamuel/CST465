@@ -1,0 +1,45 @@
+﻿body {
+}
+
+html{
+    font-size:16px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+nav ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+nav ul li{
+    border:1px solid black;
+    background:linear-gradient(to bottom, #cdcdcd, #fff);
+    border-radius:5px;
+    padding:5px;
+}
+
+footer{
+    clear:both;
+    background-color:black;
+    color:white;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:50px;
+    width:100%;
+}
+
+@media(min-width:800px)
+{
+    nav{
+        width:25%;
+        max-width:300px;
+        float:left;
+    }
+
+    main{
+        width:75%;
+        float:left;
+    }
+}

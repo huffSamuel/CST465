@@ -39,3 +39,44 @@ E:\Project Development\GitHub\CST465\CST465Project\bin\System.Web.Http.WebHost.x
 E:\Project Development\GitHub\CST465\CST465Project\obj\Debug\CST465Project.csprojResolveAssemblyReference.cache
 E:\Project Development\GitHub\CST465\CST465Project\obj\Debug\CST465Project.dll
 E:\Project Development\GitHub\CST465\CST465Project\obj\Debug\CST465Project.pdb
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\csc.exe
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\vbc.exe
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\VBCSCompiler.exe
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\CST465Project.dll.config
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\CST465Project.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\CST465Project.pdb
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Newtonsoft.Json.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Net.Http.Formatting.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Helpers.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Http.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Http.WebHost.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Mvc.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Razor.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Webpages.Deployment.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Webpages.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Webpages.Razor.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Razor.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Webpages.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Webpages.Deployment.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Webpages.Razor.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Helpers.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Mvc.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Newtonsoft.Json.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Net.Http.Formatting.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Http.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Http.WebHost.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\obj\Debug\CST465Project.csprojResolveAssemblyReference.cache
+C:\Users\samuel.huff\git\CST465\CST465Project\obj\Debug\CST465Project.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\obj\Debug\CST465Project.pdb

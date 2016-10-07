@@ -1,0 +1,31 @@
+﻿html{
+    font-size:16px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image:url(http://oregontechcdn.azureedge.net/img/bg/bg-tile.jpg);
+}
+
+body{
+    background-color:darkgrey;
+    max-width:1000px;
+    margin: 0 auto;
+}
+
+nav ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+nav ul li{
+    display:inline-block;
+
+    width:25%;
+    box-sizing:border-box;
+    border:1px solid #444444;
+}
+
+header, footer{
+    border:solid 1px #ffd14e;
+    color:white;
+    background-color:#003868;
+}

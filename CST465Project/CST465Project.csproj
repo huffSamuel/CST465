@@ -102,7 +102,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background.jpg" />
     <Content Include="CSS\DefaultStyles.css" />
+    <Content Include="CSS\Layout1.css" />
+    <Content Include="CSS\Layout2.css" />
     <Content Include="Global.asax" />
     <Content Include="HTML\Assignment1.html" />
     <Content Include="Web.config" />
@@ -118,6 +121,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="HTML\Layout.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
