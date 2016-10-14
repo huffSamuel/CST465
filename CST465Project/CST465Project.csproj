@@ -109,6 +109,10 @@
     <Content Include="Global.asax" />
     <Content Include="HTML\Assignment1.html" />
     <Content Include="Web.config" />
+    <Content Include="WebForms\Contact.aspx" />
+    <Content Include="WebForms\Default.aspx" />
+    <Content Include="WebForms\ValidatedFormOutput.aspx" />
+    <Content Include="WebForms\ValidateForm.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -117,6 +121,48 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForms\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\RequriedTextBox.ascx.cs">
+      <DependentUpon>RequriedTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\RequriedTextBox.ascx.designer.cs">
+      <DependentUpon>RequriedTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\siteMaster.Master.cs">
+      <DependentUpon>siteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\siteMaster.Master.designer.cs">
+      <DependentUpon>siteMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ValidatedFormOutput.aspx.cs">
+      <DependentUpon>ValidatedFormOutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ValidatedFormOutput.aspx.designer.cs">
+      <DependentUpon>ValidatedFormOutput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ValidateForm.aspx.cs">
+      <DependentUpon>ValidateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ValidateForm.aspx.designer.cs">
+      <DependentUpon>ValidateForm.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -128,6 +174,8 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebForms\RequriedTextBox.ascx" />
+    <Content Include="WebForms\siteMaster.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

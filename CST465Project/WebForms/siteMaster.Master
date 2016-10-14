@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="siteMaster.master.cs" Inherits="CST465Project.WebForms.siteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="../CSS/Layout1.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <nav>
+        <a href="http://weblogs.asp.net/scottgu/default.aspx">ScottGu's Blog</a> <br />
+        <a href="http://www.hanselman.com/blog">Scott Hanselman</a> <br />
+        <a href="http://odetocode.com/blogs/all">Ode To Code</a> <br />
+        <asp:ContentPlaceHolder ID="uxContentPlaceHolderNav" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </nav>
+
+    <main>
+        <asp:ContentPlaceHolder ID="uxContentPlaceHolderMain" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </main>
+    </form>
+</body>
+</html>
