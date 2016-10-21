@@ -106,8 +106,12 @@
     <Content Include="CSS\DefaultStyles.css" />
     <Content Include="CSS\Layout1.css" />
     <Content Include="CSS\Layout2.css" />
+    <Content Include="CSS\ProjectStyles.css" />
     <Content Include="Global.asax" />
     <Content Include="HTML\Assignment1.html" />
+    <Content Include="img\cupOfCoffee.jpg" />
+    <Content Include="img\headerBackground.jpg" />
+    <Content Include="img\warning.png" />
     <Content Include="Web.config" />
     <Content Include="WebForms\Contact.aspx" />
     <Content Include="WebForms\Default.aspx" />
@@ -117,6 +121,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +176,12 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="HTML\Layout.html" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\ServerError.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,7 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

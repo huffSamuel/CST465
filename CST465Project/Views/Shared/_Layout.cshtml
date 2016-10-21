@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/CSS/ProjectStyles.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <span class="company">C# Coffee</span> <br />
+        <span class="slogan">"It's not Java. It's better!"</span>
+    </header>
+    
+    <nav>
+        <ul>
+            <li>
+                @Html.ActionLink("Home", "Index", "Home", null, new { style = "text-decoration:inherit;" })
+            </li>
+            <li>
+                @Html.ActionLink("About", "Index", "About", null, new { style = "text-decoration:inherit;" })
+            </li>
+            <li>
+                @Html.ActionLink("Contact", "Index", "Contact", null, new { style = "text-decoration:inherit;" })
+            </li>
+        </ul>
+    </nav>
+        
+   @RenderSection("header", required: false)
+    
+
+    @RenderBody()
+
+    <footer class="footer">
+        @RenderSection("footer", required: false)
+        &copy; 2016 C# Coffee Products. All Rights Reserved.
+    </footer>
+</body>
+</html>
