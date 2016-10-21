@@ -109,6 +109,7 @@
     <Content Include="CSS\ProjectStyles.css" />
     <Content Include="Global.asax" />
     <Content Include="HTML\Assignment1.html" />
+    <Content Include="img\background.jpg" />
     <Content Include="img\cupOfCoffee.jpg" />
     <Content Include="img\headerBackground.jpg" />
     <Content Include="img\warning.png" />
