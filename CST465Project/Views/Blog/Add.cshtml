@@ -1,0 +1,12 @@
+﻿@model BlogPostModel
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add a New Blog Post";
+}
+<h1>Add a New Blog Post</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <button type="submit">Submit</button>
+}

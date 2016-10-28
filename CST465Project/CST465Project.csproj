@@ -122,13 +122,19 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Code\Repositories\BlogDBRepository.cs" />
+    <Compile Include="Code\Interfaces\IDataEntity.cs" />
+    <Compile Include="Code\Interfaces\IDataEntityRepository.cs" />
+    <Compile Include="Code\DataObjects\BlogPost.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Blog\BlogPostModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForms\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -183,6 +189,9 @@
     <Content Include="Views\Error\ServerError.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Blog\Add.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,7 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -21,6 +21,25 @@ header{
     font-size:12px;
 }
 
+.blogPostContent{
+    padding: 4px, 4px, 4px;
+    margin:7px;
+}
+
+.blogPostCredit{
+    padding:4px, 4px, 4px;
+    margin: 7px;
+    font-size:10px;
+    font-style:italic;
+    color:gray;
+}
+
+.editPost{
+    font-size:12px;
+    padding:4px, 4px, 4px;
+    margin:7px;
+}
+
 nav ul{
     list-style-type:none;
     margin:0;
@@ -68,7 +87,7 @@ nav ul li a{
     nav ul li{
         display:inline-block;
         box-sizing:border-box;
-        width:33.3%;
+        width:25%;
         float:left;
     }
 }
