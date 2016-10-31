@@ -36,8 +36,10 @@
         
    @RenderSection("header", required: false)
     
-
-    @RenderBody()
+    <div class="_LayoutContent">
+        @RenderBody()
+    </div>
+    
 
     <footer class="footer">
         @RenderSection("footer", required: false)
