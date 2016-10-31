@@ -1,21 +1,45 @@
-﻿html{
-    background-image:url("../background.jpg");
-    font-size:16px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+﻿/* Color Palette: http://paletton.com/#uid=10K0u0kaDgGjyoqd9eyhKdxl8cX*/
+
+html{
+    background-image:url('../img/background.jpg');
 }
 
-.container{
-    clear:both;
+body {
+    background-color:#857359;
 }
 
-.container label{
-    float:left;
+header{
+    display:block;
+    background-image:url('../../img/headerBackground.jpg');
+    color:white;
+    text-shadow:-2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     text-align:center;
-    width:100%;
 }
 
-.container input, select, textarea, table{
-    width:100%;
+.footer {
+    margin:20px;
+    display:block;
+    text-align:center;
+    font-size:12px;
+}
+
+.blogPostContent{
+    padding: 4px, 4px, 4px;
+    margin:7px;
+}
+
+.blogPostCredit{
+    padding:4px, 4px, 4px;
+    margin: 7px;
+    font-size:10px;
+    font-style:italic;
+    color:gray;
+}
+
+.editPost{
+    font-size:12px;
+    padding:4px, 4px, 4px;
+    margin:7px;
 }
 
 nav ul{
@@ -25,55 +49,47 @@ nav ul{
 }
 
 nav ul li{
-    border:groove 1px gray;
-    background:linear-gradient(to bottom, #cdcdcd, #fff);
-    border-radius:7px;
-    padding:7px;
+    border:1px solid #674B23;
+    border-radius:5px;
+    padding:5px;
+    color:#c3914c;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:bolder;
+    background-color:black;
+    text-align:center;
 }
 
-footer{
-    clear:both;
-    position:fixed;
-    bottom:0;
-    left:0;
-    height:15px;
-    width:100%;
-    font-size:12px;
-    background-color:gray;
-    color:lightgray;
+nav ul li a{
+    color:inherit;
 }
 
-section{
-    margin-bottom:30px;
+.slogan {
+    font-size:35px;
+}
+
+.company{
+    font-size:75px;
+    font-weight:bold;
 }
 
 @media(min-width:768px)
 {
+    body{
+        max-width:1080px;
+        margin-left:auto;
+        margin-right:auto;
+    }
     nav{
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        height:100%;
+    }
+    nav ul li{
+        display:inline-block;
+        box-sizing:border-box;
         width:25%;
-        float:left;
-        text-align:center;
-    }
-
-    main{
-        width:75%;
-        float:left;
-        display:block;
-    }
-
-    .container label{
-        float:left;
-        text-align:center;
-        width:auto;
-        min-width:150px;
-        display:block;
-        text-align:right;
-        margin-right:5px;
-    }
-
-    .container input, select, textarea{
-        width:auto;
-        display:block;
         float:left;
     }
 }

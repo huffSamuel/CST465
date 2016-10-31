@@ -1,0 +1,79 @@
+﻿html{
+    background-image:url("../background.jpg");
+    font-size:16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    clear:both;
+}
+
+.container label{
+    float:left;
+    text-align:center;
+    width:100%;
+}
+
+.container input, select, textarea, table{
+    width:100%;
+}
+
+nav ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+nav ul li{
+    border:groove 1px gray;
+    background:linear-gradient(to bottom, #cdcdcd, #fff);
+    border-radius:7px;
+    padding:7px;
+}
+
+footer{
+    clear:both;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:15px;
+    width:100%;
+    font-size:12px;
+    background-color:gray;
+    color:lightgray;
+}
+
+section{
+    margin-bottom:30px;
+}
+
+@media(min-width:768px)
+{
+    nav{
+        width:25%;
+        float:left;
+        text-align:center;
+    }
+
+    main{
+        width:75%;
+        float:left;
+        display:block;
+    }
+
+    .container label{
+        float:left;
+        text-align:center;
+        width:auto;
+        min-width:150px;
+        display:block;
+        text-align:right;
+        margin-right:5px;
+    }
+
+    .container input, select, textarea{
+        width:auto;
+        display:block;
+        float:left;
+    }
+}
