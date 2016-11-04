@@ -8,12 +8,15 @@ namespace CST465Project.Controllers
 {
     public class MidtermController : Controller
     {
+        
         //
         // GET: /Midterm/
         public ActionResult Index()
         {
             return View();
         }
+
+        /*
 
         [HttpGet]
         public ActionResult TakeTest()
@@ -52,5 +55,6 @@ namespace CST465Project.Controllers
 
             return questions;
         }
-	}
+        */
+    }
 }

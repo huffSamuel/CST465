@@ -1,7 +1,4 @@
-﻿/* Color Palette: http://paletton.com/#uid=10K0u0kaDgGjyoqd9eyhKdxl8cX*/
-
-
-
+﻿/* Color Palette: http://paletton.com/#uid=10K0u0kaDgGjyoqd9eyhKdxl8cX */
 body {
     background-color:#857359;
 }
@@ -86,6 +83,10 @@ body img{
     color:#C3914C;
 }
 
+.siteMap{
+    visibility:hidden;
+}
+
 @media(min-width:481px)
 {
     header{
@@ -117,4 +118,22 @@ body img{
         width:25%;
         float:left;
     }
+    /*.siteMap{
+        visibility:visible;
+        background-color:#674B23;
+        padding:12px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .leftColumn{
+        width:30%;
+        
+        float:left;
+        text-decoration:inherit;
+    }
+
+    .leftColumn a{
+        text-decoration:none;
+        color:#C3914C;
+    }*/
 }
