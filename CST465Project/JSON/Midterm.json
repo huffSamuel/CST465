@@ -1,0 +1,180 @@
+﻿[
+  {
+    "id": 1,
+    "type": "TrueFalseQuestion",
+    "question": "Cookies can be transferred between pages"
+  },
+
+  {
+    "id": 2,
+    "type": "TrueFalseQuestion",
+    "question": "Browsers must support ASP.NET in order to display pages created with it"
+  },
+
+  {
+    "id": 3,
+    "type": "TrueFalseQuestion",
+    "question": "It is good practice to use inline CSS styles"
+  },
+
+  {
+    "id": 4,
+    "type": "TrueFalseQuestion",
+    "question": "MVC View Code beginning with @ is interpreted by the browser"
+  },
+  {
+    "id": 5,
+    "type": "TrueFalseQuestion",
+    "question": "HTTP Status Code 200 indicates an error"
+  },
+
+  {
+    "id": 6,
+    "type": "TrueFalseQuestion",
+    "question": "The description meta element is useful for search engine optimization"
+  },
+
+  {
+    "id": 7,
+    "type": "TrueFalseQuestion",
+    "question": "Forms should ask as little as possible from the user"
+  },
+
+  {
+    "id": 8,
+    "type": "ShortAnswerQuestion",
+    "question": "List the following in the order of precedence (highest to lowest) for defining CSS styles: internal stylesheet, browser stylesheet, external stylesheet, inline style"
+  },
+
+  {
+    "id": 9,
+    "type": "ShortAnswerQuestion",
+    "question": "List the following CSS selector types in order of precedence (highest to lowest): element selector, attribute/class selector, name selector, inline style"
+  },
+
+  {
+    "id": 10,
+    "type": "ShortAnswerQuestion",
+    "question": "Why should you always use parameters for SQL statements instead of directly concatenating values into the string?"
+  },
+  {
+    "id": 11,
+    "type": "ShortAnswerQuestion",
+    "question": "An ASP.NET website should never allow the code to write data to the project folder on the server, with the exception of what special folder?"
+  },
+
+  {
+    "id": 12,
+    "type": "ShortAnswerQuestion",
+    "question": "Given the following CSS for a div, what are the final height and width of each div box? div{width: 50px; height: 25px; padding: 5px 10px;}"
+  },
+  {
+    "id": 13,
+    "type": "ShortAnswerQuestion",
+    "question": "Given the following CSS for a div, what are the final height and width of each div box?(Duplicate specification of margin is intentional) div{width: 30px; width: 20px; padding: 5px; margin: 3px 2px 5px 5px; border: solid 1px #000; margin-left: 10px;}"
+  },
+  {
+    "id": 14,
+    "type": "ShortAnswerQuestion",
+    "question": "Given the following CSS selector, how many ID selectors, class/attribute selectors and element selectors are there (e.g. ID:1,Class/Attribute:2, Element:0)<br />html body main.mainSection div ul#anchorList .item a[data-type=\"statusLink\"]{}"
+  },
+  {
+    "id": 15,
+    "type": "ShortAnswerQuestion",
+    "question": "What is default HTTP 'method' used when a &lt;form&gt; is submitted?"
+  },
+  {
+    "id": 16,
+    "type": "ShortAnswerQuestion",
+    "question": "What HTTP 'method' is used when you type an address into the location bar of your browser and press 'Enter'?"
+  },
+
+  {
+    "id": 17,
+    "type": "LongAnswerQuestion",
+    "question": "What is the purpose of the DOCTYPE declaration at the top of a web page"
+  },
+  {
+    "id": 18,
+    "type": "LongAnswerQuestion",
+    "question": "What is the difference between inline and block HTML elements"
+  },
+  {
+    "id": 19,
+    "type": "LongAnswerQuestion",
+    "question": "Explain why the alt attr ibute of the img tag is important"
+  },
+
+  {
+    "id": 20,
+    "type": "LongAnswerQuestion",
+    "question": "What does it mean for content to be 'Above the Fold'"
+  },
+  {
+    "id": 21,
+    "type": "LongAnswerQuestion",
+    "question": "I often drone on about HTML being a semantic language.  What do I mean, and how does this affect the way HTML should be written"
+  },
+  {
+    "id": 22,
+    "type": "LongAnswerQuestion",
+    "question": "A business object can be used as the model as part of the MVC pattern.  Why would we create a model separate from this for use with the view?"
+  },
+
+  {
+    "id": 23,
+    "type": "MultipleChoiceQuestion",
+    "question": "HTML Stands For",
+    "choices": [ "HoTMaiL", "Highly Transferable Modeling Language", "HyperText Markup Language", "High Traffic Masking Language" ]
+  },
+
+  {
+    "id": 24,
+    "type": "MultipleChoiceQuestion",
+    "question": "For accessibility, all controls that ask for user input must have an associated:",
+    "choices": [ "label", "validator", "style", "All of the above" ]
+  },
+
+  {
+    "id": 25,
+    "type": "MultipleChoiceQuestion",
+    "question": "Which of the following elements is most appropriate for presenting the user with a list of items in now particular order?",
+    "choices": [ "ol", "ul", "dl", "select" ]
+  },
+  {
+    "id": 26,
+    "type": "MultipleChoiceQuestion",
+    "question": "The living version of a page within the browser is called the",
+    "choices": [ "Output Rendering Model", "ViewModel", "Document Object Model", "Box Model" ]
+  },
+  {
+    "id": 27,
+    "type": "MultipleChoiceQuestion",
+    "question": "Given the following HTML, which selector matches and is the most specific for referring to the innermost div?<br />&lt;div&gt;&lt;div id=\"specificBox\" class=\"color\"&gt;&lt;/div&gt;&lt;div&gt;",
+    "choices": [
+      "div div.color",
+      "div#specificBox",
+      "div.color div#specificBox",
+      "div#specificBox.color"
+    ]
+  },
+  {
+    "id": 28,
+    "type": "MultipleChoiceQuestion",
+    "question": "The ASP.NET WebForms equivalent of MVC Layout pages is",
+    "choices": [ "MasterPages", "UserControls", "Server-side Includes", "framesets" ]
+  },
+  {
+    "id": 29,
+    "type": "MultipleChoiceQuestion",
+    "question": "Which of the following is not a valid HTTP method?",
+    "choices": [ "GET", "PUT", "POST", "UPDATE", "DELETE" ]
+  },
+  {
+    "id": 30,
+    "type": "MultipleChoiceQuestion",
+    "question": "Which of the following elements should all pages contain",
+    "choices": [ "ul", "main", "header", "div", "title" ]
+  }
+
+]
