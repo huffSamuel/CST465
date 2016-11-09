@@ -77,5 +77,11 @@ namespace CST465Project.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult Display(int ID)
+        {
+            BlogPost post = _repository.Get(ID);
+            return View(post);
+        }
     }
 }

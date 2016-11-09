@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CST465Project</RootNamespace>
     <AssemblyName>CST465Project</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -199,6 +199,8 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="JSON\Midterm.json" />
+    <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
+    <Content Include="Views\Blog\EditorTemplates\BlogPostModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,7 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BlogPost\" />
     <Folder Include="Views\Midterm\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

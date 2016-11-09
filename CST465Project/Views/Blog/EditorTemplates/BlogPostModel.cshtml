@@ -1,0 +1,23 @@
+﻿@model BlogPostModel
+
+<section class="editRegion">
+@Html.LabelFor(model => model.Title, new { style = "font-size:20px; font-weight:bolder;" })
+@Html.TextBoxFor(model => model.Title, new { style = "width:inherit" })
+@Html.ValidationMessageFor(model => model.Title)
+</section>
+
+<section class="editLongRegion">
+@Html.LabelFor(m => m.Content)
+@Html.TextAreaFor(m => m.Content, new { style="width:inherit;height:90%;" })
+@Html.ValidationMessageFor(m => m.Title)
+</section>
+
+<section class="editRegion">
+@Html.LabelFor(m => m.Author)
+@Html.TextBoxFor(m => m.Author, new { style = "width:inherit;" })
+@Html.ValidationMessageFor(m => m.Author)
+</section>
+
+
+
+

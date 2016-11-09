@@ -1,0 +1,13 @@
+﻿@model BlogPost
+
+<div style="border:1px solid gray;">
+    <h2>@Model.Title</h2>
+    <p class="blogPostContent">
+        @Model.Content
+    </p>
+    <div class="blogPostCredit">
+        - @Model.Author <br/>
+        @Model.Timestamp
+    </div>
+    @Html.ActionLink("Edit Post", "Edit", Model)
+</div>

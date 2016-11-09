@@ -6,8 +6,11 @@
 <div style="text-align:center;">
     <h1>Blogs</h1>
 
-    @foreach (BlogPost post in Model)
+    @Html.DisplayForModel()
+
+    @*@foreach (BlogPost post in Model)
     {
+        
         <div style="border:1px solid gray;">
             <h2>@post.Title</h2>
 
@@ -23,7 +26,7 @@
                 @Html.ActionLink("Edit Post", "Edit", new { ID = post.ID })
             </div>
         </div>
-    }
+    }*@
     <br />
 </div>
 @Html.ActionLink("Add New Blog Post", "Add")
