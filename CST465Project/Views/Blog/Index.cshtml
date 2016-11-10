@@ -6,7 +6,9 @@
 <div style="text-align:center;">
     <h1>Blogs</h1>
 
-    @Html.DisplayForModel()
+    @*@Html.DisplayForModel()*@
+
+    @Html.Partial("_BlogPostLinkList")
 
     @*@foreach (BlogPost post in Model)
     {

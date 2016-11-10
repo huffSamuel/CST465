@@ -201,6 +201,8 @@
     <Content Include="JSON\Midterm.json" />
     <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
     <Content Include="Views\Blog\EditorTemplates\BlogPostModel.cshtml" />
+    <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
+    <Content Include="Views\Blog\Display.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

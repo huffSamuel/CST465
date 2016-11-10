@@ -81,6 +81,7 @@ namespace CST465Project.Controllers
         public ActionResult Display(int ID)
         {
             BlogPost post = _repository.Get(ID);
+
             return View(post);
         }
     }

@@ -58,6 +58,7 @@ header{
 }
 
 .editRegion{
+    
     box-sizing:border-box;
     text-align:center;
 
@@ -159,10 +160,15 @@ body img{
     }
 
     .editRegion{
-        max-width:40%;
+        text-align:left;
+        margin-left:auto;
+        margin-right:auto;
     }
 
     .editRegionLong{
-        max-width:40%;
+        width:100%;
+        min-height:70px;
+        margin-top:5px;
+        margin-bottom:5px;
     }
 }
