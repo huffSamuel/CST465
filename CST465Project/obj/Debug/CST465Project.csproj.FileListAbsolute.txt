@@ -79,7 +79,6 @@ C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Http.xml
 C:\Users\samuel.huff\git\CST465\CST465Project\bin\System.Web.Http.WebHost.xml
 C:\Users\samuel.huff\git\CST465\CST465Project\obj\Debug\CST465Project.dll
 C:\Users\samuel.huff\git\CST465\CST465Project\obj\Debug\CST465Project.pdb
-C:\Users\samuel.huff\git\CST465\CST465Project\obj\Debug\CST465Project.csprojResolveAssemblyReference.cache
 C:\Users\Sam\Documents\git\CST465\CST465Project\bin\roslyn\csc.exe
 C:\Users\Sam\Documents\git\CST465\CST465Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Sam\Documents\git\CST465\CST465Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -160,3 +159,13 @@ C:\Users\telecom\Source\Repos\CST465\CST465Project\bin\System.Web.Http.xml
 C:\Users\telecom\Source\Repos\CST465\CST465Project\bin\System.Web.Http.WebHost.xml
 C:\Users\telecom\Source\Repos\CST465\CST465Project\obj\Debug\CST465Project.dll
 C:\Users\telecom\Source\Repos\CST465\CST465Project\obj\Debug\CST465Project.pdb
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.Unity.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Unity.Mvc5.dll
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.Unity.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\samuel.huff\git\CST465\CST465Project\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml

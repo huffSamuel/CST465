@@ -1,8 +1,11 @@
 ﻿@model IEnumerable<BlogPost>
 
-@foreach(var blog in Model)
+@if (Model != null)
 {
-    @Html.ActionLink(blog.Title, "Display", new { id = blog.ID });
-    <div>@blog.Timestamp</div>
-    
+    foreach (var blog in Model)
+    {
+        @Html.ActionLink(blog.Title, "Display", new { id = blog.ID });
+        <div>@blog.Timestamp.ToLocalTime()</div>
+
+    }
 }

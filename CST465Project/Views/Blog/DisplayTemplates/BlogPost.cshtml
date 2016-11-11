@@ -7,7 +7,9 @@
     </p>
     <div class="blogPostCredit">
         - @Model.Author <br/>
-        @Model.Timestamp
+        @Model.Timestamp.ToLocalTime()
     </div>
-    @Html.ActionLink("Edit Post", "Edit", Model)
+    @Html.ActionLink("Edit Post", "Edit", Model) 
+    <br />
+    @Html.ActionLink("View All Blogs", "Index")
 </div>

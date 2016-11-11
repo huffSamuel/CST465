@@ -9,6 +9,11 @@ namespace CST465Project.Controllers
     public class BlogController : Controller
     {
         private IDataEntityRepository<BlogPost> _repository;
+        public BlogController(IDataEntityRepository<BlogPost> rep)
+        {
+            _repository = rep;
+        }
+
         public BlogController()
         {
             this._repository = new BlogDBRepository();
@@ -17,6 +22,13 @@ namespace CST465Project.Controllers
         public ActionResult Index()
         {
             List<BlogPost> list = _repository.GetList();
+            return View(list);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string filter)
+        {
+            List<BlogPost> list = _repository.GetListByContent(filter);
             return View(list);
         }
 
@@ -84,5 +96,6 @@ namespace CST465Project.Controllers
 
             return View(post);
         }
+
     }
 }
