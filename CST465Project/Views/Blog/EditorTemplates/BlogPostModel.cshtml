@@ -2,7 +2,7 @@
 
 <section class="editRegion">
 @Html.LabelFor(model => model.Title, new { style = "font-size:20px; font-weight:bolder;" })
-    @Html.ValidationMessageFor(model => model.Title, null, new { style = "font-size:18px; color:red; font-weight:bold" })
+@Html.ValidationMessageFor(model => model.Title, null, new { style = "font-size:18px; color:red; font-weight:bold" })
 @Html.TextBoxFor(model => model.Title, new { style = "width:inherit" })
 
 </section>
@@ -16,7 +16,7 @@
 
 <section class="editRegion">
 @Html.LabelFor(m => m.Author, new { style = "font-size:20px; font-weight:bolder;" })
-    @Html.ValidationMessageFor(m => m.Author, null, new { style = "font-size:18px; color:red; font-weight:bold" })
+@Html.ValidationMessageFor(m => m.Author, null, new { style = "font-size:18px; color:red; font-weight:bold" })
 @Html.TextBoxFor(m => m.Author, new { style = "width:inherit;" })
 
 </section>

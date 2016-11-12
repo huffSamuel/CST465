@@ -145,7 +145,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\ExtensionMethods\BlogRepositoryExtensions.cs" />
     <Compile Include="Code\Repositories\BlogJSONRepository.cs" />
-    <Compile Include="Models\TestQuestion\TestQuestion.cs" />
     <Compile Include="Code\Repositories\BlogDBRepository.cs" />
     <Compile Include="Code\Interfaces\IDataEntity.cs" />
     <Compile Include="Code\Interfaces\IDataEntityRepository.cs" />
@@ -160,10 +159,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Blog\BlogPostModel.cs" />
-    <Compile Include="Models\TestQuestion\LongAnswerQuestion.cs" />
-    <Compile Include="Models\TestQuestion\MultipleChoiceQuestion.cs" />
-    <Compile Include="Models\TestQuestion\ShortAnswerQuestion.cs" />
-    <Compile Include="Models\TestQuestion\TrueFalseQuestion.cs" />
+    <Compile Include="Models\Midterm\LongAnswerQuestion.cs" />
+    <Compile Include="Models\Midterm\MultipleChoiceQuestion.cs" />
+    <Compile Include="Models\Midterm\ShortAnswerQuestion.cs" />
+    <Compile Include="Models\Midterm\TestQuestion.cs" />
+    <Compile Include="Models\Midterm\TrueFalseQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForms\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -227,6 +227,13 @@
     <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
     <Content Include="Views\Blog\Display.cshtml" />
     <Content Include="App_Data\jsonRepository.json" />
+    <Content Include="Views\Midterm\TakeTest.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\TrueFalseQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\ShortAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\LongAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
+    <Content Include="Views\Midterm\DisplayResults.cshtml" />
+    <Content Include="Views\Midterm\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -237,8 +244,6 @@
     <Content Include="WebForms\siteMaster.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\BlogPost\" />
-    <Folder Include="Views\Midterm\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <PropertyGroup>

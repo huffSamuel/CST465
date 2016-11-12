@@ -11,6 +11,7 @@ namespace CST465Project
     {
         public int ID { get; set; }
         public string Question { get; set; }
+        [Required]
         public virtual string Answer { get; set; }
     }
 }

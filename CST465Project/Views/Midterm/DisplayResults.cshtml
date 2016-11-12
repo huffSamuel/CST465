@@ -1,0 +1,18 @@
+﻿@model List<TestQuestion>
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Test Results";
+}
+
+<h1>Results</h1>
+@foreach (TestQuestion q in Model)
+{
+    <div>
+        <h2>
+            @q.Question
+        </h2>
+        <p>
+            @q.Answer
+        </p>
+    </div>
+}

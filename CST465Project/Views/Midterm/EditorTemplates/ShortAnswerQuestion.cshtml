@@ -1,0 +1,9 @@
+﻿@model ShortAnswerQuestion
+<div>
+<h2>@Html.Raw(Model.Question)</h2>
+@Html.HiddenFor(m=>Model.ID)
+@Html.TextBoxFor(m=>Model.Answer)
+    <div>
+        @Html.ValidationMessageFor(m => Model.Answer)
+    </div>
+</div>

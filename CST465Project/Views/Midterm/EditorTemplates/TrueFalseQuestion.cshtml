@@ -1,0 +1,12 @@
+﻿@model TrueFalseQuestion
+<div>
+    <h2>@Html.Raw(Model.Question)</h2>
+    @Html.HiddenFor(m => Model.ID)
+    @Html.DropDownListFor(m => Model.Answer, new List<SelectListItem> {
+        new SelectListItem { Text = "True", Selected = true, Value = "true" },
+        new SelectListItem { Text = "False", Selected = false, Value = "false" }
+    })
+    <div>
+        @Html.ValidationMessageFor(m => Model.Answer)
+    </div>
+</div>
