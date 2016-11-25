@@ -234,6 +234,8 @@
     <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
     <Content Include="Views\Midterm\DisplayResults.cshtml" />
     <Content Include="Views\Midterm\Index.cshtml" />
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="Smtp.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

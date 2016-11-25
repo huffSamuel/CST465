@@ -178,3 +178,4 @@ C:\Users\Sam\Documents\git\CST465\CST465Project\bin\System.Web.Http.xml
 C:\Users\Sam\Documents\git\CST465\CST465Project\bin\System.Web.Http.WebHost.xml
 C:\Users\Sam\Documents\git\CST465\CST465Project\obj\Debug\CST465Project.dll
 C:\Users\Sam\Documents\git\CST465\CST465Project\obj\Debug\CST465Project.pdb
+C:\Users\Sam\Documents\git\CST465\CST465Project\obj\Debug\CST465Project.csprojResolveAssemblyReference.cache
