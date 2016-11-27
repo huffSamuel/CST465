@@ -12,8 +12,10 @@ namespace CST465Project
     public class ApplicationUser : IdentityUser
     {
         public int ProfileID { get; set; }
-        //private DateTime _BirthDate = DateTime.Now;
-        public DateTime BirthDate { get; set; }//{ get { return _BirthDate; } set{ _BirthDate = value; } }
+        public DateTime BirthDate { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public int Age { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

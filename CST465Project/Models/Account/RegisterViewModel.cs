@@ -27,6 +27,17 @@ namespace CST465Project
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
+        [Required]
+        [Display(Name = "First name")]
+        [DataType(DataType.Text)]
+        public string FirstName { get; set; }
 
+        [Required]
+        [Display(Name = "Last name")]
+        [DataType(DataType.Text)]
+        public string LastName { get; set; }
+
+        [Required]
+        public int Age { get; set; }
     }
 }

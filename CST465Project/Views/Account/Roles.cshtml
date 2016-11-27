@@ -1,0 +1,16 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Roles</h2>
+@Html.DisplayForModel()
+
+@using(Html.BeginForm("Roles", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Label("Role Name: ")
+    @Html.TextBox("RoleName", null, new { @class="form-control" })
+    <button type="submit">Submit</button>
+}

@@ -5,12 +5,16 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System.Collections.Generic;
+using System;
 
 namespace CST465Project.Controllers
 {
+    
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationRoleManager _roleManager;
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         
@@ -20,10 +24,23 @@ namespace CST465Project.Controllers
             
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager roleManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager;
+        }
+
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            set
+            {
+                _roleManager = value;
+            }
         }
 
         public ApplicationSignInManager SignInManager
@@ -183,7 +200,7 @@ namespace CST465Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BirthDate = model.BirthDate };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BirthDate = model.BirthDate, FirstName = model.FirstName, LastName = model.LastName, Age = model.Age };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -416,38 +433,38 @@ namespace CST465Project.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View(model);
         }
-        //[HttpPost]
-        //[Authorize]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult JoinRole(string RoleName)
-        //{
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult JoinRole(string RoleName)
+        {
 
-        //    UserManager.AddToRole(User.Identity.GetUserId(), RoleName);
+            UserManager.AddToRole(User.Identity.GetUserId(), RoleName);
 
-        //    return RedirectToAction("Roles");
+            return RedirectToAction("Roles");
 
 
-        //}
-        //[HttpGet]
-        //[Authorize]
-        //public ActionResult Roles()
-        //{
-        //    List<string> roleNames = RoleManager.Roles.Select(role => role.Name).ToList();
-        //    return View(roleNames);
-        //}
-        //[HttpPost]
-        //[Authorize]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Roles(string RoleName)
-        //{
-        //    var role = new ApplicationRole();
-        //    role.Id = Guid.NewGuid().ToString();
-        //    role.Name = RoleName;
-        //    RoleManager.Create(role);
+        }
+        [HttpGet]
+        [Authorize]
+        public ActionResult Roles()
+        {
+            List<string> roleNames = RoleManager.Roles.Select(role => role.Name).ToList();
+            return View(roleNames);
+        }
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Roles(string RoleName)
+        {
+            var role = new ApplicationRole();
+            role.Id = Guid.NewGuid().ToString();
+            role.Name = RoleName;
+            RoleManager.Create(role);
 
-        //    return RedirectToAction("Roles");
+            return RedirectToAction("Roles");
 
-        //}
+        }
         //
         //POST: /Account/LogOff
         [HttpPost]
@@ -455,7 +472,7 @@ namespace CST465Project.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Intro");
+            return RedirectToAction("Index", "Home");
         }
 
         //
@@ -512,7 +529,7 @@ namespace CST465Project.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Intro");
+            return RedirectToAction("Index", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

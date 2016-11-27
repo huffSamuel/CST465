@@ -60,20 +60,25 @@ namespace CST465Project.Controllers
 
         public ActionResult Edit(int id)
         {
-            BlogPost post = _repository.Get(id);
-            BlogPostModel postmodel = new BlogPostModel();
-            postmodel.Author = post.Author;
-            postmodel.Content = post.Content;
-            postmodel.ID = post.ID;
-            postmodel.Title = post.Title;
+            if(User.Identity.IsAuthenticated)
+            {
+                BlogPost post = _repository.Get(id);
+                BlogPostModel postmodel = new BlogPostModel();
+                postmodel.Author = post.Author;
+                postmodel.Content = post.Content;
+                postmodel.ID = post.ID;
+                postmodel.Title = post.Title;
+                return View(postmodel);
+            }
+            
 
-            return View(postmodel);
+            return View();
         }
 
         [HttpPost]
         public ActionResult Edit(BlogPostModel model)
         {
-            if(ModelState.IsValid)
+            if(ModelState.IsValid && User.Identity.IsAuthenticated)
             {
                 BlogPost post = new BlogPost();
                 post.Author = model.Author;
