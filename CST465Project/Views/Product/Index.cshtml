@@ -1,0 +1,13 @@
+﻿@model List<Product>
+@{
+    ViewBag.Title = "Web Store";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Products</h1>
+@Html.Partial("_ProductList")
+
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Add a new product", "Add")
+}

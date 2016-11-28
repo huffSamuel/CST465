@@ -87,7 +87,6 @@ namespace CST465Project
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Author", entity.Author);
-
                 cmd.Parameters.AddWithValue("@Title", entity.Title);
                 cmd.Parameters.AddWithValue("@Content", entity.Content);
                 cmd.Connection.Open();

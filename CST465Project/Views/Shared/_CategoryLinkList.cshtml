@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Category>
+
+@if (Model != null)
+{
+    foreach (var obj in Model)
+    {
+        @Html.ActionLink(obj.CategoryName, "Display", new { id = obj.ID })
+        <br />
+    }
+}

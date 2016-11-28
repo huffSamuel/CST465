@@ -1,0 +1,13 @@
+﻿@model Category
+
+<div style="border:1px solid gray;">
+    <h2>@Model.CategoryName</h2>
+    @if(User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Edit Category", "Edit", Model)
+        <br />
+        @Html.ActionLink("Delete Category", "Delete", Model)
+    }
+    <br />
+    @Html.ActionLink("All Categories", "Index")
+</div>

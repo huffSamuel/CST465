@@ -24,6 +24,8 @@ namespace CST465Project
             container.RegisterType<IRoleStore<ApplicationRole, string>, RoleStore<ApplicationRole>>(new HierarchicalLifetimeManager());
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<IDataEntityRepository<BlogPost>, BlogJSONRepository>();
+            container.RegisterType<IDataEntityRepository<Category>, CategoryDBRepository>();
+            container.RegisterType<IDataEntityRepository<Product>, ProductDBRepository>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

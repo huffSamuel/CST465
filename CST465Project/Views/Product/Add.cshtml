@@ -1,0 +1,43 @@
+﻿@model ProductModel
+@{
+    ViewBag.Title = "New Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Add Product</h1>
+    using (Html.BeginForm("Add", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        @Html.LabelFor(model => model.ProductName) <br />
+        @Html.TextBoxFor(model => model.ProductName)<br />
+
+        @Html.LabelFor(model => model.ProductCode)<br />
+        @Html.TextBoxFor(model => model.ProductCode)<br />
+
+        @Html.LabelFor(model => model.ProductDescription)<br />
+        @Html.TextAreaFor(model => model.ProductDescription)<br />
+
+        @Html.LabelFor(model => model.Price)<br />
+        @Html.TextBoxFor(model => model.Price)<br />
+
+        @Html.LabelFor(model => model.Quantity)<br />
+        @Html.TextBoxFor(model => model.Quantity)<br />
+
+        @Html.LabelFor(model => model.CategoryID)<br />
+        @Html.DropDownListFor(model => model.CategoryID, new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName")) <br />
+
+        @Html.LabelFor(model => model.ProductImage)<br />
+        <input type="file" name="ProductImage" />
+        <br />
+        <button type="submit">Submit</button>
+    }
+}
+else
+{
+    <div>
+        Please log in to perform this action.
+    </div>
+}

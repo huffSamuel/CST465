@@ -1,0 +1,5 @@
+﻿@model CategoryModel
+
+@Html.LabelFor(model=>model.CategoryName, new { style = "font-size:20px; font-weight:bolder;" })
+@Html.ValidationMessageFor(model=>model.CategoryName, null, new { style="font-size:18px;color:red;font-weight:bold;"})
+@Html.TextBoxFor(model=>model.CategoryName, new { styl = "width:inherit" })

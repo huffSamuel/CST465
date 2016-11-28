@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Product>
+
+@if(Model != null)
+{
+    foreach(var obj in Model)
+    {
+        @Html.ActionLink(obj.ProductName, "Display", new { id = obj.ID })
+        <div>
+            <br />
+            Price: $@obj.Price <br />
+            <img src=@Url.Action("DisplayImage"), alt="ProductImage") /> <br />
+            <br />
+            @obj.ProductDescription
+        </div>
+    }
+}

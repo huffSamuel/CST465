@@ -1,0 +1,21 @@
+﻿@model Product
+
+<div style="border:1px solid gray;">
+    <h2>@Model.ProductName</h2>
+    Product Code: @Model.ProductCode <br />
+    <img src=@Url.Action("DisplayImage"), alt="Product Image" />
+    Price: @Model.Price <br />
+    Description: @Model.ProductDescription <br />
+    Quantity: @Model.Quantity <br />
+
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <br />
+        @Html.ActionLink("Edit Product", "Edit", Model)
+        <br />
+        @Html.ActionLink("Delete Product", "Delete", Model)
+    }
+    <br />
+    @Html.ActionLink("All Products", "Index")
+</div>

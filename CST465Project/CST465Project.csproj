@@ -191,6 +191,7 @@
     <Content Include="img\headerBackground.jpg" />
     <Content Include="img\warning.png" />
     <Content Include="SQLScripts\DropIdentity.sql" />
+    <Content Include="SQLScripts\Inventory.sql" />
     <Content Include="Web.config" />
     <Content Include="WebForms\Contact.aspx" />
     <Content Include="WebForms\Default.aspx" />
@@ -203,19 +204,25 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Code\DataObjects\Category.cs" />
+    <Compile Include="Code\DataObjects\Product.cs" />
     <Compile Include="Code\ExtensionMethods\BlogRepositoryExtensions.cs" />
     <Compile Include="Code\Repositories\BlogJSONRepository.cs" />
     <Compile Include="Code\Repositories\BlogDBRepository.cs" />
     <Compile Include="Code\Interfaces\IDataEntity.cs" />
     <Compile Include="Code\Interfaces\IDataEntityRepository.cs" />
     <Compile Include="Code\DataObjects\BlogPost.cs" />
+    <Compile Include="Code\Repositories\CategoryDBRepository.cs" />
+    <Compile Include="Code\Repositories\ProductDBRepository.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MidtermController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,11 +235,13 @@
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
     <Compile Include="Models\Identity\ApplicationRole.cs" />
     <Compile Include="Models\Identity\ApplicationUser.cs" />
+    <Compile Include="Models\Inventory\CategoryModel.cs" />
     <Compile Include="Models\Midterm\LongAnswerQuestion.cs" />
     <Compile Include="Models\Midterm\MultipleChoiceQuestion.cs" />
     <Compile Include="Models\Midterm\ShortAnswerQuestion.cs" />
     <Compile Include="Models\Midterm\TestQuestion.cs" />
     <Compile Include="Models\Midterm\TrueFalseQuestion.cs" />
+    <Compile Include="Models\Inventory\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForms\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -320,6 +329,20 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\Roles.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Display.cshtml" />
+    <Content Include="Views\Category\Add.cshtml" />
+    <Content Include="Views\Category\EditorTemplates\CategoryModel.cshtml" />
+    <Content Include="Views\Category\DisplayTemplates\Category.cshtml" />
+    <Content Include="Views\Shared\_CategoryLinkList.cshtml" />
+    <Content Include="Views\Product\DisplayTemplates\Product.cshtml" />
+    <Content Include="Views\Product\EditorTemplates\ProductModel.cshtml" />
+    <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\Product\Display.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\_ProductList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
