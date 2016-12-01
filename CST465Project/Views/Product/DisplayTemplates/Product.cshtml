@@ -1,13 +1,15 @@
 ﻿@model Product
 
 <div style="border:1px solid gray;">
+    
     <h2>@Model.ProductName</h2>
     Product Code: @Model.ProductCode <br />
-    <img src=@Url.Action("DisplayImage"), alt="Product Image" />
+    <img c="@Url.Action("DisplayImage", new { @p = @Model })" alt="@Model.ImageFileName" />
     Price: @Model.Price <br />
     Description: @Model.ProductDescription <br />
     Quantity: @Model.Quantity <br />
 
+    
 
     @if (User.Identity.IsAuthenticated)
     {

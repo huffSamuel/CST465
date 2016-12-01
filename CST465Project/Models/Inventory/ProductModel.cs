@@ -27,6 +27,7 @@ namespace CST465Project
         [Display(Name = "Product Description")]
         public string ProductDescription { get; set; }
         public HttpPostedFileWrapper ProductImage { get; set; }
+        public SelectList Categories { get; set; }
         [Required]
         public float Price { get; set; }
         [Required]

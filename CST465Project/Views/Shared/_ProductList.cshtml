@@ -4,11 +4,16 @@
 {
     foreach(var obj in Model)
     {
-        @Html.ActionLink(obj.ProductName, "Display", new { id = obj.ID })
         <div>
+        @Html.ActionLink(obj.ProductName, "Display", new { id = obj.ID })
             <br />
             Price: $@obj.Price <br />
-            <img src=@Url.Action("DisplayImage"), alt="ProductImage") /> <br />
+            @if (obj.ProductImage != null)
+            {
+                string s = "data:" + obj.ImageContentType + ";base64," + Convert.ToBase64String(obj.ProductImage);
+                <img src="@s" alt="@obj.ImageFileName" />
+            }
+
             <br />
             @obj.ProductDescription
         </div>

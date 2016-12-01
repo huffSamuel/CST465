@@ -39,17 +39,28 @@ namespace CST465Project
         {
             if (ModelState.IsValid)
             {
+                byte[] imageBytes;
                 Product product = new Product();
                 product.ID = model.ID;
                 product.CategoryID = model.CategoryID;
                 product.Price = model.Price;
                 product.ProductCode = model.ProductCode;
                 product.ProductDescription = model.ProductDescription;
-                using (MemoryStream ms = new MemoryStream())
+                if (model.ProductImage != null)
                 {
-                    model.ProductImage.InputStream.CopyTo(ms);
-                    product.ProductImage = ms.ToArray();
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        model.ProductImage.InputStream.CopyTo(ms);
+                        imageBytes = ms.ToArray();
+                    }
+                    product.ProductImage = imageBytes;
+                    product.ImageFileName = model.ProductImage.FileName;
+                    product.ImageContentType = model.ProductImage.ContentType;
                 }
+                else
+                    product.ProductImage = null;
+                
                 product.ProductName = model.ProductName;
                 product.Quantity = model.Quantity;
                 _repository.Save(product);
@@ -62,14 +73,10 @@ namespace CST465Project
             return RedirectToAction("Index");
         }
 
-        public ActionResult DisplayImage(int id)
+        public ActionResult DisplayImage(Product product)
         {
-            Image image;
-            using (MemoryStream ms = new MemoryStream(_repository.Get(id).ProductImage))
-            {
-                image = Image.FromStream(ms);
-            }
-            return File(_repository.Get(id).ProductImage, "image", "download");
+            return File(product.ProductImage, product.ImageContentType, product.ImageFileName);
+            //return File(image, content, file);
         }
 
         public ActionResult Edit(int id)
@@ -85,6 +92,7 @@ namespace CST465Project
                 model.ProductDescription = product.ProductDescription;
                 model.ProductName = product.ProductName;
                 model.Quantity = product.Quantity;
+                model.Categories = new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName");
                 return View(model);
             }
             else

@@ -1,4 +1,7 @@
-﻿CREATE TABLE Category
+﻿DROP TABLE Product
+DROP TABLE Category
+
+CREATE TABLE Category
 (
 	ID INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 	CategoryName VARCHAR(200) NOT NULL
@@ -10,6 +13,8 @@ CREATE TABLE Product
 	ProductName VARCHAR(200) NOT NULL,
 	CategoryID INT NOT NULL REFERENCES Category(ID), 
 	ProductDescription VARCHAR(MAX) NULL,
+	ImageType VARCHAR(50),
+	ImageName VARCHAR(50),
 	ProductImage VARBINARY(MAX),
 	Price MONEY NOT NULL,
 	Quantity INT NOT NULL 

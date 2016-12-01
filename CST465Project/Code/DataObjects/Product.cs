@@ -13,8 +13,10 @@ namespace CST465Project
         public int CategoryID { get; set; }
         public string ProductDescription { get; set; }
         public float Price { get; set; }
+        public string ImageFileName { get; set; }
+        public string ImageContentType { get; set; }
         public byte[] ProductImage { get; set; }
         public int Quantity { get; set; }
-        // Need to add image data here somewhere
+        
     }
 }
