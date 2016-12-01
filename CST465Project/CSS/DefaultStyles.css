@@ -127,6 +127,34 @@ body img{
     visibility:hidden;
 }
 
+.Identity{
+    font-size:15px;
+    display:inline-block;
+    text-align:center;
+    width:100%;
+}
+
+.Identity form
+{
+    float:right;
+    padding-left:5px;
+    padding-right:10px;
+}
+
+.Identity a
+{   
+    display:block;
+    background-color:#746044;
+    text-decoration:none;
+    color:#c3914c;
+    padding:5px;
+    border:2px solid #674b23;
+    border-radius:7px;
+    font-size:22px;
+    margin-top:5px;
+    font-weight:bold;
+}
+
 @media(min-width:481px)
 {
     header{
@@ -170,5 +198,26 @@ body img{
         min-height:70px;
         margin-top:5px;
         margin-bottom:5px;
+    }
+
+    .Identity{
+        display:inline-block;
+        text-align:right;
+        width:100%;
+    }
+
+    .Identity form
+    {
+        float:right;
+        padding-left:5px;
+        padding-right:10px;
+    }
+
+    .Identity a
+    {
+        float:right;
+        width:62px;
+        padding-left:5px;
+        padding-right:10px;
     }
 }

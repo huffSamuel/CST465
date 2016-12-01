@@ -15,23 +15,7 @@
     <header>
         <span class="company">C# Coffee</span> <br />
         <span class="slogan">"It's not Java. It's better!"</span>
-        @if(User.Identity.IsAuthenticated)
-        {
-            <div>
-                Welcome @User.Identity.Name
-                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
-                }
-            </div>
-        }
-        else
-        {
-            <div>
-                 Welcome Anonymous! @Html.ActionLink("Login", "Login", "Account", null, new { style = "text-decoration:none" })
-            </div>
-        }
+        
     </header>
 
     <nav>
@@ -55,6 +39,24 @@
                 @Html.ActionLink("Categories", "Index", "Category", null, new { style="text-decoration:inherit;"})
             </li>
         </ul>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="Identity">
+                Welcome @User.Identity.Name
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm", style = "float:right; padding-left:5px;padding-right:10px" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="Identity">
+                Welcome Anonymous! 
+                @Html.ActionLink("Login", "Login", "Account", null, new {  })
+            </div>
+        }
     </nav>
         
    @RenderSection("header", required: false)
