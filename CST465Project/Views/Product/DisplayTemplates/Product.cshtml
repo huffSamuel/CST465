@@ -2,21 +2,68 @@
 
 <div style="border:1px solid gray;">
     
-    <h2>@Model.ProductName</h2>
-    Product Code: @Model.ProductCode <br />
-    <img c="@Url.Action("DisplayImage", new { @p = @Model })" alt="@Model.ImageFileName" />
-    Price: @Model.Price <br />
+    <h1>@Model.ProductName</h1>
+    
+    @if (Model.ImageFileName != "null")
+    {
+        int thumbnailRatio = 200;
+        var cacheItemKey = Model.ID + "Full";
+        var cacheHit = true;
+        var time = WebCache.Get(cacheItemKey);
+        if (time == null)
+        {
+            cacheHit = false;
+        }
+        if (cacheHit == false)
+        {
+            // Base 64 encode the string
+            string s = "data:" + Model.ImageContentType + ";base64," + Convert.ToBase64String(Model.ProductImage);
+            string t;
+            // Cache full-size image
+            WebCache.Set(Model.ID + @"Full", s, 5, true);
+            System.Drawing.Image img;
+            using (MemoryStream ms = new MemoryStream(Model.ProductImage))
+            {
+                // Load a new image
+                img = System.Drawing.Image.FromStream(ms);
+                // Generate a thumbnail of the image
+                System.Drawing.Image thumb = img.GetThumbnailImage(thumbnailRatio, img.Height * thumbnailRatio / img.Width, null, IntPtr.Zero);
+                using (MemoryStream ms2 = new MemoryStream())
+                {
+                    // Save the image to a memorystream
+                    thumb.Save(ms2, System.Drawing.Imaging.ImageFormat.Bmp);
+                    // Write stream to byte array
+                    byte[] bytes = ms2.ToArray();
+                    // Base 64 encode the thumbnail
+                    t = "data:" + Model.ImageContentType + ";base64," + Convert.ToBase64String(bytes);
+                    // Cache the thumbnail
+                    WebCache.Set(Model.ID + @"Thumbnail", t, 5, true);
+                }
+            }
+            <img src=@s alt="@Model.ImageFileName" style="width:auto; height:auto;" />
+        }
+        //string s = "data:" + obj.ImageContentType + ";base64," + Convert.ToBase64String(obj.ProductImage);
+        //<img src="@s" alt="@obj.ImageFileName" />
+        else
+        {
+            <img src="@WebCache.Get(Model.ID + @"Full")" ) alt="@Model.ImageFileName" style="width:auto; height:auto;" />
+        }
+    }
+    <br />
+
+    Price: $@Model.Price <br />
     Description: @Model.ProductDescription <br />
     Quantity: @Model.Quantity <br />
+    Product Code: @Model.ProductCode <br />
 
     
 
     @if (User.Identity.IsAuthenticated)
     {
         <br />
-        @Html.ActionLink("Edit Product", "Edit", Model)
+        <input type="button" value="Edit Product" onclick="location.href='@Url.Action("Edit", "Product", new { id = @Model.ID })'" />
         <br />
-        @Html.ActionLink("Delete Product", "Delete", Model)
+        <input type="button" value="Delete Product" onclick="location.href='@Url.Action("Delete", "Product", new { id = @Model.ID })'" />
     }
     <br />
     @Html.ActionLink("All Products", "Index")

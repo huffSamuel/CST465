@@ -4,14 +4,56 @@
 {
     foreach(var obj in Model)
     {
-        <div>
+        <div style="border:1px solid #cdcdcd">
         @Html.ActionLink(obj.ProductName, "Display", new { id = obj.ID })
             <br />
             Price: $@obj.Price <br />
-            @if (obj.ProductImage != null)
+            @if (BitConverter.ToInt16(obj.ProductImage,0) != 0)
             {
-                string s = "data:" + obj.ImageContentType + ";base64," + Convert.ToBase64String(obj.ProductImage);
-                <img src="@s" alt="@obj.ImageFileName" />
+                int thumbnailRatio = 200;
+                var cacheItemKey = obj.ID + "Full";
+                var cacheHit = true;
+                var time = WebCache.Get(cacheItemKey);
+                if (time == null)
+                {
+                    cacheHit = false;
+                }
+
+                if (cacheHit == false)
+                {
+                    // Base 64 encode the string
+                    string s = "data:" + obj.ImageContentType + ";base64," + Convert.ToBase64String(obj.ProductImage);
+                    string t;
+                    // Cache full-size image
+                    WebCache.Set(obj.ID + @"Full", s, 5, true);
+                    System.Drawing.Image img;
+                    using (MemoryStream ms = new MemoryStream(obj.ProductImage))
+                    {
+                        // Load a new image
+                        img = System.Drawing.Image.FromStream(ms);
+                        // Generate a thumbnail of the image
+                        System.Drawing.Image thumb = img.GetThumbnailImage(thumbnailRatio, img.Height * thumbnailRatio / img.Width, null, IntPtr.Zero);
+                        using (MemoryStream ms2 = new MemoryStream())
+                        {
+                            // Save the image to a memorystream
+                            thumb.Save(ms2, System.Drawing.Imaging.ImageFormat.Bmp);
+                            // Write stream to byte array
+                            byte[] bytes = ms2.ToArray();
+                            // Base 64 encode the thumbnail
+                            t = "data:" + obj.ImageContentType + ";base64," + Convert.ToBase64String(bytes);
+                            // Cache the thumbnail
+                            WebCache.Set(obj.ID + @"Thumbnail", t, 5, true);
+                        }
+                    }
+                    <img src=@t alt="@obj.ImageFileName" style="width:200px; height:auto;"/>
+                }
+                //string s = "data:" + obj.ImageContentType + ";base64," + Convert.ToBase64String(obj.ProductImage);
+                //<img src="@s" alt="@obj.ImageFileName" />
+                else
+                {
+                    <img src="@WebCache.Get(obj.ID + @"Thumbnail")" ) alt="@obj.ImageFileName" style="width:200px; height:auto;"/>
+                }
+
             }
 
             <br />

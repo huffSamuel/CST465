@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -82,6 +84,26 @@ namespace CST465Project
             }
             else
                 return View(model);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+
+            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                // DELETE FROM Product WHERE CategoryID=@ID
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE FROM Product WHERE CategoryID=@ID";
+                cmd.Parameters.AddWithValue("@ID", id);
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "DELETE FROM Category WHERE ID=@ID";
+                cmd.ExecuteNonQuery();
+            }
+
             return RedirectToAction("Index");
         }
 

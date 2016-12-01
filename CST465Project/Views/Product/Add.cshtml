@@ -27,7 +27,7 @@
         @Html.TextBoxFor(model => model.Quantity)<br />
 
         @Html.LabelFor(model => model.CategoryID)<br />
-        @Html.DropDownListFor(model => model.CategoryID, new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName")) <br />
+        @Html.DropDownListFor(model => model.CategoryID, Model.Categories) <br />
 
         @Html.LabelFor(model => model.ProductImage)<br />
         <input type="file" name="ProductImage" />

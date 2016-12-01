@@ -4,9 +4,10 @@
     <h2>@Model.CategoryName</h2>
     @if(User.Identity.IsAuthenticated)
     {
-        @Html.ActionLink("Edit Category", "Edit", Model)
+        <input type="button" value="Edit Category" onclick="location.href='@Url.Action("Edit", "Category", new { model = Model })'" />
+
         <br />
-        @Html.ActionLink("Delete Category", "Delete", Model)
+        <input type="button" value="Delete Category" onclick="location.href='@Url.Action("Delete", "Category", new { id = Model.ID })'" />
     }
     <br />
     @Html.ActionLink("All Categories", "Index")

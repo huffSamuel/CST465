@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace CST465Project
@@ -28,9 +31,27 @@ namespace CST465Project
             return View(list);
         }
 
+        public ActionResult Delete(int id)
+        {
+
+            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE FROM Product WHERE ID=@ID";
+                cmd.Parameters.AddWithValue("@ID", id);
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Add()
         {
             ProductModel model = new CST465Project.ProductModel();
+            model.Categories = new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName");
             return View(model);
         }
 
@@ -73,12 +94,6 @@ namespace CST465Project
             return RedirectToAction("Index");
         }
 
-        public ActionResult DisplayImage(Product product)
-        {
-            return File(product.ProductImage, product.ImageContentType, product.ImageFileName);
-            //return File(image, content, file);
-        }
-
         public ActionResult Edit(int id)
         {
             if(User.Identity.IsAuthenticated)
@@ -104,28 +119,40 @@ namespace CST465Project
         [HttpPost]
         public ActionResult Edit(ProductModel model)
         {
-            if (!User.Identity.IsAuthenticated)
-                return RedirectToAction("Index");
-            else if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                Product product = new CST465Project.Product();
+                byte[] imageBytes;
+                Product product = new Product();
                 product.ID = model.ID;
                 product.CategoryID = model.CategoryID;
                 product.Price = model.Price;
                 product.ProductCode = model.ProductCode;
                 product.ProductDescription = model.ProductDescription;
-                using (MemoryStream ms = new MemoryStream())
+                if (model.ProductImage != null)
                 {
-                    model.ProductImage.InputStream.CopyTo(ms);
-                    product.ProductImage = ms.ToArray();
+                    WebCache.Remove(product.ID + "Full");
+                    WebCache.Remove(product.ID + "Thumbnail");
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        model.ProductImage.InputStream.CopyTo(ms);
+                        imageBytes = ms.ToArray();
+                    }
+                    product.ProductImage = imageBytes;
+                    product.ImageFileName = model.ProductImage.FileName;
+                    product.ImageContentType = model.ProductImage.ContentType;
+                    
                 }
+                else
+                    product.ProductImage = null;
+
                 product.ProductName = model.ProductName;
                 product.Quantity = model.Quantity;
                 _repository.Save(product);
             }
             else
-                return View(model);
+                return View("Edit", model);
             return RedirectToAction("Index");
+            
         }
 
         public ActionResult Display(int ID)
