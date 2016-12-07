@@ -28,7 +28,31 @@ namespace CST465Project
         public ActionResult Index()
         {
             List<Product> list = _repository.GetList();
-            return View(list);
+            InventoryModel m = new InventoryModel();
+            m.products = list;
+            m.categories = new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName");
+
+            return View(m);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string filter, string category)
+        {
+            List<Product> list;
+            if(filter=="")
+            {
+                list = _repository.GetListByCategoryID(Int32.Parse(category));
+            }
+            else
+            {
+                list = _repository.GetListBySearch(filter);
+                list.Intersect(_repository.GetListByCategoryID(Int32.Parse(category)));
+            }
+            InventoryModel m = new InventoryModel();
+            m.products = list;
+            m.categories = new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName");
+
+            return View(m);
         }
 
         public ActionResult Delete(int id)

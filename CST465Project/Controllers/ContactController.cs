@@ -13,5 +13,16 @@ namespace CST465Project.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(string dummy)
+        {
+            return RedirectToAction("Confirm");
+        }
+        public ActionResult Confirm()
+        {
+            return View();
+        }
     }
 }

@@ -12,9 +12,13 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    
     <header>
         <span class="company">C# Coffee</span> <br />
         <span class="slogan">"It's not Java. It's better!"</span>
+        <div class="logo">
+            <img src="~/img/java-logo-vector.png" />
+        </div>
         
     </header>
 
@@ -42,6 +46,7 @@
         @if (User.Identity.IsAuthenticated)
         {
             <div class="Identity">
+                
                 Welcome @User.Identity.Name
                 @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm", style = "float:right; padding-left:5px;padding-right:10px" }))
                 {

@@ -1,12 +1,18 @@
-﻿
+﻿@model HomeModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home";
 }
 
-<body>
+<body style="text-align:center">
     <h2>Premium Gluten-Free All-Natural Barista Art</h2>
     <img src="~/img/cupOfCoffee.jpg" alt="CoffeeArt" style="border:1px solid black;"/>
+    <h3>Most recent blogposts:</h3>
+    @Html.Partial("PartialBlogs", Model.blogs)
+    <br />
+    <h3>Check out these items:</h3>
+    @Html.Partial("PartialProducts", Model.products)
+
 </body>
 
 @section header{

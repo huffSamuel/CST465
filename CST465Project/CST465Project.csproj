@@ -189,6 +189,7 @@
     <Content Include="img\background.jpg" />
     <Content Include="img\cupOfCoffee.jpg" />
     <Content Include="img\headerBackground.jpg" />
+    <Content Include="img\java-logo-vector.png" />
     <Content Include="img\warning.png" />
     <Content Include="SQLScripts\DropIdentity.sql" />
     <Content Include="SQLScripts\Inventory.sql" />
@@ -207,6 +208,7 @@
     <Compile Include="Code\DataObjects\Category.cs" />
     <Compile Include="Code\DataObjects\Product.cs" />
     <Compile Include="Code\ExtensionMethods\BlogRepositoryExtensions.cs" />
+    <Compile Include="Code\ExtensionMethods\ProductRespositoryExtensions.cs" />
     <Compile Include="Code\Repositories\BlogJSONRepository.cs" />
     <Compile Include="Code\Repositories\BlogDBRepository.cs" />
     <Compile Include="Code\Interfaces\IDataEntity.cs" />
@@ -232,10 +234,13 @@
     <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Models\Account\ResetPasswordViewModel.cs" />
     <Compile Include="Models\Blog\BlogPostModel.cs" />
+    <Compile Include="Models\Contact\ContactModel.cs" />
+    <Compile Include="Models\Home\HomeModel.cs" />
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
     <Compile Include="Models\Identity\ApplicationRole.cs" />
     <Compile Include="Models\Identity\ApplicationUser.cs" />
     <Compile Include="Models\Inventory\CategoryModel.cs" />
+    <Compile Include="Models\Inventory\InventoryModel.cs" />
     <Compile Include="Models\Midterm\LongAnswerQuestion.cs" />
     <Compile Include="Models\Midterm\MultipleChoiceQuestion.cs" />
     <Compile Include="Models\Midterm\ShortAnswerQuestion.cs" />
@@ -343,6 +348,9 @@
     <Content Include="Views\Shared\_ProductList.cshtml" />
     <Content Include="ConnectionStrings.config" />
     <Content Include="Smtp.config" />
+    <Content Include="Views\Contact\Confirm.cshtml" />
+    <Content Include="Views\Home\PartialBlogs.cshtml" />
+    <Content Include="Views\Home\PartialProducts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

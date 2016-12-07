@@ -1,11 +1,28 @@
-﻿@model List<Product>
+﻿@model InventoryModel
 @{
     ViewBag.Title = "Web Store";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Products</h1>
-@Html.Partial("_ProductList")
+@if(Model.products.Count == 0)
+{
+    <div>
+        No products found.
+    </div>
+}
+else
+{
+    @Html.Partial("_ProductList", Model.products)
+}
+
+
+<form method="post">
+    <label>Search</label>
+    <input type="text" id="filter" name="filter" />
+    @Html.DropDownList("category", Model.categories)
+    <button type="submit">Submit</button>
+</form>
 
 @if (User.Identity.IsAuthenticated)
 {
