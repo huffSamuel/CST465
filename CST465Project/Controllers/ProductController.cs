@@ -28,9 +28,11 @@ namespace CST465Project
         public ActionResult Index()
         {
             List<Product> list = _repository.GetList();
+            List<Category> categories = new CategoryDBRepository().GetList();
+            categories.Insert(0, new Category() { ID = 0, CategoryName = "None" });
             InventoryModel m = new InventoryModel();
             m.products = list;
-            m.categories = new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName");
+            m.categories = new SelectList(categories, "ID", "CategoryName");
 
             return View(m);
         }
@@ -39,9 +41,15 @@ namespace CST465Project
         public ActionResult Index(string filter, string category)
         {
             List<Product> list;
+            List<Category> categories = new CategoryDBRepository().GetList();
+            categories.Insert(0, new Category() { ID = 0, CategoryName = "None" });
             if(filter=="")
             {
                 list = _repository.GetListByCategoryID(Int32.Parse(category));
+            }
+            else if(category == "")
+            {
+                list = _repository.GetListBySearch(filter);
             }
             else
             {
@@ -50,7 +58,7 @@ namespace CST465Project
             }
             InventoryModel m = new InventoryModel();
             m.products = list;
-            m.categories = new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName");
+            m.categories = new SelectList(categories, "ID", "CategoryName");
 
             return View(m);
         }

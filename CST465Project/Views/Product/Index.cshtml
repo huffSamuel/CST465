@@ -5,6 +5,12 @@
 }
 
 <h1>Products</h1>
+<form method="post">
+    <label>Search</label>
+    <input type="text" id="filter" name="filter" />
+    @Html.DropDownList("category", Model.categories)
+    <button type="submit">Submit</button>
+</form>
 @if(Model.products.Count == 0)
 {
     <div>
@@ -15,14 +21,6 @@ else
 {
     @Html.Partial("_ProductList", Model.products)
 }
-
-
-<form method="post">
-    <label>Search</label>
-    <input type="text" id="filter" name="filter" />
-    @Html.DropDownList("category", Model.categories)
-    <button type="submit">Submit</button>
-</form>
 
 @if (User.Identity.IsAuthenticated)
 {

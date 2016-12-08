@@ -100,7 +100,7 @@ namespace CST465Project
                 cmd.Parameters.AddWithValue("@ProductName", entity.ProductName);
                 cmd.Parameters.AddWithValue("@CategoryID", entity.CategoryID);
                 cmd.Parameters.AddWithValue("@ProductDescription", entity.ProductDescription);
-                if(entity.ImageFileName != "null")
+                if(!string.IsNullOrEmpty(entity.ImageFileName))
                 {
                     cmd.Parameters.AddWithValue("@ProductImage", entity.ProductImage);
                     cmd.Parameters.AddWithValue("@ImageFileName", entity.ImageFileName);
